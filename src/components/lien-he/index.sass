@@ -1,0 +1,310 @@
+.contact-information
+	.frm-captcha
+		display: inline !important
+	.frm-btnwrap
+		margin-top: -70px !important
+	@media screen and(max-width:1350px)
+		.frm-btnwrap
+			display: flex
+			justify-content: center
+			align-items: center
+		.bg-wrapper
+			padding: 20px 40px 80px 50px
+	@media screen and(max-width:576px)
+		.bg-wrapper
+			padding: 20px 15px 80px 15px
+		.rcRefreshImage
+			font-size: 0
+			&:before
+				font-family: 'Material Design Icons'
+				content: '\F450'
+				font-size: 20px
+				display: inline-block
+	@media screen and(max-width:1025px)
+		.frm-btnwrap
+			margin-top: -65px !important
+	@media screen and(max-width:576px)
+		.frm-btnwrap
+			margin-top: -95px !important
+	
+.contact-form-title
+	*
+		font-size: 16px
+		color: #666666
+		font-weight: 400
+		line-height: 24px
+		margin-bottom: 16px
+	@media screen and(max-width:1025px)
+			font-size: 30px
+			padding-bottom: 30px
+.bg-wrapper
+	padding: 20px 40px 20px 50px
+	background: #f9f9f9
+.form-center
+	display: flex
+	justify-content: center
+	background: #f9f9f9
+.wrap-form
+	.frm-btn-reset
+		display: none
+	.frm-btnwrap
+		display: inline-flex
+		margin-bottom: -16px
+		align-items: flex-start
+		justify-content: center
+		margin-right: -16px
+		float: right
+	.form-group
+		padding: 4px 10px
+		span
+			display: none
+		label
+			font-size: 14px
+			color: #666666
+			font-weight: 600
+			margin-bottom: 4px
+		span
+			font-style: italic
+			font-size: 14px
+			color: #ff1212
+		textarea
+			height: 100px
+		input,textarea
+			border: 1px solid #e7e7e7
+			width: 100%
+			padding: 8px 30px 8px 16px
+			color: #666666
+			font-size: 14px
+			line-height: 20px
+			background: #ffffff
+			transition: .3s all ease-in-out
+			margin-bottom: 16px
+			&:focus,&:hover
+				border-color: $yellow
+				box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3)
+				outline: none
+	.frm-btn
+		vertical-align: middle
+		transform: perspective(1px) translateZ(0)
+		transition-duration: .3s
+		transition-property: transform
+		margin-top: 13px
+		cursor: pointer
+		display: inline-flex
+		justify-content: center
+		align-items: center
+		padding: 10px 40px
+		background: #41535d
+		color: $yellow
+		transition: .3s all ease-in-out
+		border: none
+		display: inline-block
+		vertical-align: middle
+		transform: perspective(1px) translateZ(0)
+		// box-shadow: 0 0 1px rgba(0, 0, 0, 0)
+		position: relative
+		transition-property: color
+		transition-duration: 0.5s
+		&:before
+			content: ""
+			position: absolute
+			z-index: -1
+			pointer-events: none
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			background: $yellow
+			-webkit-transform: scaleX(0)
+			transform: scaleX(0)
+			-webkit-transform-origin: 0 50%
+			transform-origin: 0 50%
+			-webkit-transition-property: transform
+			transition-property: transform
+			-webkit-transition-duration: 0.5s
+			transition-duration: 0.5s
+			-webkit-transition-timing-function: ease-out
+			transition-timing-function: ease-out
+		&:hover
+			input[type='submit']
+				color: white
+				box-shadow: none !important
+			&:before
+				-webkit-transform: scaleX(1)
+				transform: scaleX(1)
+				-webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66)
+				transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66)
+		input[type='submit']
+			padding: 0
+			margin: 0
+			text-transform: uppercase
+			border: none
+			color: #ffffff
+			background: none
+			&:focus
+				outline: none
+		em
+			padding-left: 8px
+			color: #fff
+			font-size: 16px
+	@media screen and(max-width:1025px)
+		padding-bottom: 20px
+	@media screen and(max-width: 576px)
+		.form-group
+			padding:  4px 15px
+			input,textarea
+				padding: 8px 16px
+	@media screen and(max-width: 450px)
+		.form-group
+			input,textarea
+				padding: 8px 16px
+
+
+
+.google-map-location
+	padding: 50px 0 80px 0
+	@media screen and(max-width:1441px)
+		padding: 40px 0 70px 0
+	@media screen and(max-width:1025px)
+		padding: 30px 0 50px
+	.tab-item
+		display: none 
+		&.active 
+			display: block
+	.map-location-wrapper
+		position: relative
+		overflow: hidden
+		padding-top: 56.25%
+		iframe
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			border: 0
+	@media screen and(max-width:1441px)
+		.map-location-wrapper
+			height: 500px
+	@media screen and(max-width:1200px)
+		.map-location-wrapper
+			height: 400px
+	article
+		background: #41535d
+		padding: 33px 0
+		height: 500px
+		.item 
+			margin-bottom: 10px
+			padding: 10px 20px 10px 40px
+			&:hover,&.active 
+				background: #a9a9a98c
+				h3 
+					&:after
+						width: 100%
+				
+		h3
+			font-size: 18px
+			font-weight: 600
+			color: $yellow
+			line-height: 25px
+			position: relative
+			cursor: pointer
+			margin-top: 20px
+			&:after
+				content: ''
+				display: block
+				position: absolute
+				left: 0
+				top: -15px
+				width: 70px
+				height: 1px
+				background: $yellow
+				transition: all .5s ease-in-out
+		ul
+			list-style-type: none
+			padding: 0
+			li
+				margin: 6px 0
+				display: flex
+				justify-content: flex-start
+				align-items: flex-start
+				color: #ffffff
+				font-size: 14px
+				font-weight: 400
+				em
+					color: #a0a9ae
+					margin-right: 5px
+				*
+					color: #ffffff
+	.form-select
+		width: 100%
+		height: 40px
+		-webkit-appearance: none
+		padding: 5px 20px
+		outline: none
+	.field.form_desc:nth-child(2)
+		position: relative
+		&:before
+			position: absolute
+			top: 50%
+			right: 20px
+			transform: translateY(-50%)
+			transition: all .5s ease-in-out
+			color: #b1b1b1
+			font-family: Linearicons-Free
+			font-size: 14px
+			content: "\e874"
+	.locate.mrb15
+		text-align: center
+		margin-bottom: 10px
+		color: #ffffff
+		padding: 0 10px
+		strong 
+			color: #fa0
+	.noli.list_system
+		padding: 0
+		list-style: none
+		li 
+			padding: 10px 20px
+			display: flex
+		.number
+			font-weight: 700  
+			position: relative
+			margin-right: 10px
+			color: #ffffff
+			&:after 
+				top: 0
+				content: '.'
+				display: block 
+				left: 10px
+				position: absolute
+
+		li>div 
+			strong
+				color: #fa0
+		li>div>div 
+			color: #ffffff
+		.clinic_list
+			&.active 
+				background: #a9a9a98c
+	.system-dealer.store-maps
+		.map_system
+			height: 500px
+	.search-location.findmaps
+		position: relative
+	.filtermap
+		position: absolute
+		z-index: 99
+		width: 90%
+		left: 50%
+		transform: translateX(-50%)
+		top: 20px
+	.field.form_desc
+		display: flex
+		justify-content: center
+	.hidden-xs-up
+		background: #41535d
+		padding: 80px 0
+		height: 500px
+		@media (max-width: 1025px)
+			height: 400px!important
+			margin-bottom: 20px!important
