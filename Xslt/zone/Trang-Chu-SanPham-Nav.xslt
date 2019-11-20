@@ -9,7 +9,7 @@
 	</xsl:template>
 	<xsl:template match="Zone">
 
-		<div class="product-status-content home-product-navigation">
+		<div class="product-status-content">
 			<xsl:apply-templates select="Zone" mode="Zone2TabContent"></xsl:apply-templates>
 		</div>
 	</xsl:template>
@@ -34,7 +34,7 @@
 				</xsl:attribute>
 			</xsl:if>
 			<xsl:attribute name="href">
-				<xsl:text>javascript:void(0)</xsl:text>
+				<xsl:value-of select="Url"></xsl:value-of>
 			</xsl:attribute>
 			<xsl:attribute name="title">
 				<xsl:value-of select="Title"></xsl:value-of>
@@ -57,9 +57,8 @@
 				<figcaption>
 					<p>
 						<xsl:value-of select="Title"></xsl:value-of>
-						<xsl:value-of select="Description"></xsl:value-of>
+						<xsl:value-of select="Code"></xsl:value-of>
 					</p>
-
 				</figcaption>
 			</figure>
 		</a>

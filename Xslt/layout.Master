@@ -14,7 +14,7 @@
 	<link
 		href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,700i&display=swap&subset=vietnamese"
 		rel="stylesheet">
-	<portal:ScriptLoader ID="ScriptLoader1" runat="server" IncludejQueryUICore="true" IncludeFancyBox="true" />
+	<portal:ScriptLoader ID="ScriptLoader1" runat="server" IncludejQueryUICore="false" IncludeFancyBox="true" />
 	<link rel="apple-touch-icon" sizes="57x57" href="/Data/Sites/1/media/favicon/apple-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="/Data/Sites/1/media/favicon/apple-icon-60x60.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="/Data/Sites/1/media/favicon/apple-icon-72x72.png">
@@ -78,11 +78,11 @@
 				</div>
 				<div class="container">
 					<div class="main-wrapper">
-						<div class="left-wrapper">
-							<portal:ModuleWrapper ID="mdl210" runat="server" ConfigureModuleId="210" />
-						</div>
 						<div class="main-logo">
 							<portal:ModuleWrapper ID="mdl206" runat="server" ConfigureModuleId="206" />
+						</div>
+						<div class="left-wrapper">
+							<portal:ModuleWrapper ID="mdl210" runat="server" ConfigureModuleId="210" />
 						</div>
 						<div class="right-wrapper">
 							<portal:ModuleWrapper ID="mdl211" runat="server" ConfigureModuleId="211" />
@@ -149,7 +149,8 @@
 							</div>
 							<div class="copyright-wrapper">
 								<p>
-									<portal:copyrightlabel id="cl1" runat="server" showyear="true" beginyear="2019" />
+									<portal:copyrightlabel id="cl1" runat="server" showyear="true" beginyear="2019"
+										ShowDesignedByCanhCam="false" />
 									<!-- © 2019 Bản quyền thuộc về Vitrac. Tất cả các quyền được bảo hộ. Thiết kế bởi <a
 										target="_blank" href="http://www.canhcam.vn">Cánh Cam</a> -->
 								</p>
@@ -170,7 +171,11 @@
 
 		</div>
 		<script src="/Data/Sites/1/skins/default/js/core.min.js?v=1.0.0"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js" type="text/javascript"></script>
+		<script src="/Data/Sites/1/skins/default/js/ecommerce.js?v=1.0.0"></script>
 		<script src="/Data/Sites/1/skins/default/js/main.min.js?v=1.0.0"></script>
+		<!-- <script src="/Data/Sites/1/skins/default/js/dealerfinder.js?v=1.0.0"></script> -->
+		<script src="https://sp.zalo.me/plugins/sdk.js"></script>
 		<portal:AutoHidePanel ID="ah1" CssClass="cmsadminpanel" runat="server">
 			<div class="row">
 				<div class="col-lg-12">

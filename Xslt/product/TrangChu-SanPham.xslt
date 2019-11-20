@@ -15,13 +15,7 @@
 			</div>
 		</div>
 		<div class="vt-button">
-			<a>
-				<xsl:attribute name="href">
-					<xsl:value-of select="/ProductList/ZoneUrl"></xsl:value-of>
-				</xsl:attribute>
-				<xsl:attribute name="title">
-					<xsl:value-of select="Title"></xsl:value-of>
-				</xsl:attribute>
+			<a href="#">
 				<xsl:text>Xem thêm</xsl:text>
 			</a>
 		</div>
@@ -54,13 +48,9 @@
 								</span>
 							</div>
 						</xsl:when>
-						<xsl:when test="floor(ShowOption div 3) mod 2 = 1">
-							<span class="promotion op3">
-								Hot
-							</span>
-						</xsl:when>
 						<xsl:when test="floor(ShowOption div 2) mod 2 = 1">
-							<span class="promotion op2">Đã bán
+							<span class="promotion op2">
+								Khuyến mãi
 							</span>
 						</xsl:when>
 					</xsl:choose>

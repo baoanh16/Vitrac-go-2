@@ -9,10 +9,12 @@
 					<div class="col-lg-6">
 						<div class="product-swiper-wrapper">
 							<div class="product-top-wrapper">
-								<div class="swiper-container">
-									<div class="swiper-wrapper">
-										<xsl:apply-templates select="/ProductDetail/ProductImages" mode="Top">
-										</xsl:apply-templates>
+								<div class="lightgallery">
+									<div class="swiper-container">
+										<div class="swiper-wrapper">
+											<xsl:apply-templates select="/ProductDetail/ProductImages" mode="Top">
+											</xsl:apply-templates>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -41,6 +43,29 @@
 									<xsl:value-of select="/ProductDetail/EditLink" disable-output-escaping="yes">
 									</xsl:value-of>
 								</h2>
+								<xsl:choose>
+									<xsl:when test="floor(/ProductDetail/ShowOption div 1) mod 2 = 1">
+										<div class="promotion op1">
+											<span>
+												Mới
+											</span>
+										</div>
+									</xsl:when>
+									<xsl:when test="floor(/ProductDetail/ShowOption div 3) mod 2 = 1">
+										<div class="promotion op3">
+											<span>
+												Hot
+											</span>
+										</div>
+									</xsl:when>
+									<xsl:when test="floor(/ProductDetail/ShowOption div 2) mod 2 = 1">
+										<div class="promotion op2">
+											<span>
+												Đã bán
+											</span>
+										</div>
+									</xsl:when>
+								</xsl:choose>
 							</div>
 							<hr class="dash-green" />
 							<xsl:value-of select="/ProductDetail/BriefContent" disable-output-escaping="yes">
@@ -48,14 +73,18 @@
 							<div class="bottom-button-wrapper">
 								<div class="check-out-button">
 									<a>
-
 										<xsl:attribute name="href">
 											<xsl:text>/lien-he</xsl:text>
 										</xsl:attribute>
-										<xsl:text>Liên hệ</xsl:text>
-
-
-										<em class="lnr lnr-arrow-right"></em>
+										<xsl:choose>
+											<xsl:when test="/ProductDetail/Price != ''">
+												<xsl:value-of select='/ProductDetail/Price'></xsl:value-of>
+											</xsl:when>
+											<xsl:otherwise>
+												<xsl:text>Liên hệ</xsl:text>
+												<em class="lnr lnr-arrow-right"></em>
+											</xsl:otherwise>
+										</xsl:choose>
 									</a>
 								</div>
 								<div class="social-network-wrapper">
@@ -69,27 +98,18 @@
 										</a>
 									</div>
 									<div class="social-network-item">
-										<a target="_blank">
-											<xsl:attribute name="href">
-												<xsl:text>https://zalo.com/share?url=</xsl:text>
-												<xsl:value-of select="/ProductDetail/FullUrl"></xsl:value-of>
-											</xsl:attribute>
+										<!-- <div class="zalo-share-button" href='javascript:void(0)' data-href="" data-oaid="579745863508352884" data-layout="2" data-color="blue"></div> -->
+										<a href='javascript:void(0)' class="zalo-share-button" data-href=""
+											data-oaid="579745863508352884" data-layout="2" data-color="blue"
+											data-customize="true">
 											<xsl:text disable-output-escaping="yes">Zalo</xsl:text>
 										</a>
 									</div>
 									<div class="social-network-item">
 										<a target="_blank">
 											<xsl:attribute name="href">
-												<xsl:text>https://instagram.com/share?url=</xsl:text>
-												<xsl:value-of select="/ProductDetail/FullUrl"></xsl:value-of>
-											</xsl:attribute>
-											<em class="mdi mdi-instagram"></em>
-										</a>
-									</div>
-									<div class="social-network-item">
-										<a target="_blank">
-											<xsl:attribute name="href">
-												<xsl:text>https://pinterest.com/share?url=</xsl:text>
+												<xsl:text>https://pinterest.com/pin/create/bookmarklet/?&amp;url=
+												</xsl:text>
 												<xsl:value-of select="/ProductDetail/FullUrl"></xsl:value-of>
 											</xsl:attribute>
 											<em class="mdi mdi-pinterest"></em>
@@ -164,29 +184,39 @@
 				</div>
 				<div class="other-product-wrapper">
 					<div class="product-title-yl-start">
-						<h3>Sản phẩm khác</h3>
+						<h3>Sản phẩm tương tự</h3>
 					</div>
 					<hr class="dash-grey" />
 					<div class="product-item-wrapper">
-						<xsl:apply-templates select="/ProductDetail/ProductOther"></xsl:apply-templates>
+						<xsl:apply-templates select="/ProductDetail/ProductRelated"></xsl:apply-templates>
 					</div>
+				</div>
+				<div class="tag-list">
+					<xsl:value-of select="/ProductDetail/Tag" disable-output-escaping="yes"></xsl:value-of>
 				</div>
 			</div>
 		</section>
 	</xsl:template>
-
 	<xsl:template match="ProductImages" mode="Top">
 		<div class="swiper-slide">
 			<div class="wrapper">
 				<div class="swiper-image">
-					<img class="medium-zoom">
-					<xsl:attribute name="src">
-						<xsl:value-of select="ImageUrl"></xsl:value-of>
-					</xsl:attribute>
-					<xsl:attribute name="alt">
-						<xsl:value-of select="Title"></xsl:value-of>
-					</xsl:attribute>
-					</img>
+					<a>
+						<xsl:attribute name="href">
+							<xsl:value-of select="ImageUrl"></xsl:value-of>
+						</xsl:attribute>
+						<xsl:attribute name="title">
+							<xsl:value-of select="Title"></xsl:value-of>
+						</xsl:attribute>
+						<img>
+						<xsl:attribute name="src">
+							<xsl:value-of select="ImageUrl"></xsl:value-of>
+						</xsl:attribute>
+						<xsl:attribute name="alt">
+							<xsl:value-of select="Title"></xsl:value-of>
+						</xsl:attribute>
+						</img>
+					</a>
 				</div>
 			</div>
 		</div>
@@ -208,7 +238,7 @@
 		</div>
 	</xsl:template>
 
-	<xsl:template match="ProductOther">
+	<xsl:template match="ProductRelated">
 		<div class="product-item">
 			<div class="wrapper">
 				<div class="product-image">

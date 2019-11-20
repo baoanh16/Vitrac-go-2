@@ -51,7 +51,7 @@
                         <p>
                             <xsl:value-of select="Title"></xsl:value-of>
                         </p>
-                        <span><xsl:value-of select="Description"></xsl:value-of></span>
+                        <span><xsl:value-of select="Code"></xsl:value-of></span>
                     </figcaption>
                 </figure>
             </a>

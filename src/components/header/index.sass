@@ -3,7 +3,7 @@
 	top: 0
 	left: 0
 	z-index: 55
-	height: 60px
+	height: 70px
 	width: 100%
 	background: #41535d
 	color: #fff
@@ -17,35 +17,36 @@
 		height: 100%
 	.main-logo
 		position: relative
-		margin: 0 auto
-		margin-bottom: -60px
+		margin: 0 auto 0 0
+		// margin-bottom: -60px
+		display: flex
+		align-items: center
 		z-index: 120
 		&.minize
 			&:before
 				opacity: 0
-
 			a
 				img
 					height: 40px
-		&:before
-			content: ''
-			width: 0
-			height: 0
-			border-left: 75px solid transparent
-			border-right: 75px solid transparent
-			border-top: 70px solid #41535d
-			position: absolute
-			top: 50%
-			left: 50%
-			opacity: 1
-			transition: opacity .3s ease-in-out
-			transform: translateX(-50%)
+		// &:before
+		// 	content: ''
+		// 	width: 0
+		// 	height: 0
+		// 	border-left: 75px solid transparent
+		// 	border-right: 75px solid transparent
+		// 	border-top: 70px solid #41535d
+		// 	position: absolute
+		// 	top: 50%
+		// 	left: 50%
+		// 	opacity: 1
+		// 	transition: opacity .3s ease-in-out
+		// 	transform: translateX(-50%)
 		a
 			display: block
 			position: relative
 		img
 			transition: .3s all ease-in-out
-			height: 100px
+			height: 40px
 	.cart-wrapper
 		display: none!important
 	.user-wrapper, .cart-wrapper, .language-wrapper
@@ -123,7 +124,7 @@
 							font-size: 16px
 	
 	.right-wrapper, .left-wrapper
-		width: calc(100% / 2 - 50px)
+		// width: calc(100% / 2 - 50px)
 		display: flex
 	.right-wrapper
 		justify-content: flex-end
@@ -162,7 +163,7 @@
 						&.firstnav
 							font-size: 11px
 							margin: 0 0 !important
-	@media(max-width: 1350px)
+	@media (max-width: 1350px)
 		.right-wrapper
 			.user-wrapper
 				.user-toggle-wrapper
@@ -177,11 +178,11 @@
 				li
 					a
 						font-size: 14px
-	@media(max-width: 1220px)
+	@media (max-width: 1220px)
 		.list-page-right
 			li
 				padding: 0 8px !important
-	@media(max-width: 1200px)
+	@media (max-width: 1200px)
 		.right-wrapper
 			.user-wrapper
 				&.active
@@ -243,17 +244,14 @@
 			text-align: center
 			
 		.main-logo
-			margin-bottom: -50px
 			&:before
 				border-top: 60px solid #41535d
 				border-right: 65px solid transparent
 				border-left: 65px solid transparent
-			img
-				height: 80px
 	@media(max-width: 1025px)
 		.mobile-wrapper
 			position: fixed
-			padding-top: 10px
+			padding-top: 30px
 			top: 60px
 			left: -300px
 			width: 300px

@@ -57,6 +57,25 @@
 		<tr>
 			<td class="product-item">
 				<figure>
+					<xsl:choose>
+						<xsl:when test="floor(ShowOption div 1) mod 2 = 1">
+							<div class="promotion op1">
+								<span>
+									Mới
+								</span>
+							</div>
+						</xsl:when>
+						<xsl:when test="floor(ShowOption div 3) mod 2 = 1">
+							<span class="promotion op3">
+								Hot
+							</span>
+						</xsl:when>
+						<xsl:when test="floor(ShowOption div 2) mod 2 = 1">
+							<span class="promotion op2">
+								Đã bán
+							</span>
+						</xsl:when>
+					</xsl:choose>
 					<div class="image">
 						<a>
 							<xsl:attribute name="href">
@@ -92,7 +111,7 @@
 				</figure>
 			</td>
 			<td>
-				<xsl:value-of select="ProductProperties[FieldId = 15]/Options/Title" disable-output-escaping="yes" />
+				<xsl:value-of select="ProductProperties[FieldId = 15 or FieldId = 20 or FieldId = 21 or FieldId = 22 or FieldId = 23 or FieldId = 24 or FieldId = 25 or FieldId = 26 or FieldId = 27 or FieldId = 28]/Options/Title" disable-output-escaping="yes" />
 			</td>
 			<td>
 				<xsl:value-of select="ProductProperties[FieldId = 10]/Options/Title" disable-output-escaping="yes" />
@@ -107,9 +126,16 @@
 				<xsl:value-of select="ProductProperties[FieldId = 13]/Options/Title" disable-output-escaping="yes" />
 			</td>
 			<td>
-				<xsl:value-of select="ProductProperties[FieldId = 14]/Options/Title" disable-output-escaping="yes" />
+				<xsl:apply-templates select="ProductProperties[FieldId = 57]/Options"></xsl:apply-templates>
+				<!-- <xsl:value-of select="ProductProperties[FieldId = 57]/Options/Title" disable-output-escaping="yes" /> -->
 			</td>
 		</tr>
 	</xsl:template>
+	<xsl:template match="Options">
+		<xsl:value-of select="Title"></xsl:value-of>
+		<xsl:if test='position() != last()'>
+		<xsl:text>, </xsl:text>
+		</xsl:if>
 
+	</xsl:template>
 </xsl:stylesheet>

@@ -1,0 +1,82 @@
+.feedback-section
+	padding-bottom: 60px
+	.title
+		text-align: center
+		padding-bottom: 30px
+		h1 
+			font-size: 32px
+			color: #ffaa00
+			text-transform: uppercase
+			font-weight: 600
+	.row
+		margin-bottom: -30px
+		> *
+			margin-bottom: 30px
+	.feedback
+		display: flex
+		.img
+			flex: 0 0 100px
+			max-width: 100px
+			.wrapper
+				height: 100px
+				border-radius: 50%
+				overflow: hidden
+		.content-wrapper
+			padding-left: 20px
+			.text-wrapper
+				padding: 60px 50px
+				border: 2px solid #5abfce
+				font-size: 14px
+				color: #5abfce
+				position: relative
+				background: #fff
+				&:before
+					position: absolute
+					content: ''
+					width: 15px
+					height: 15px
+					border: 2px solid #5abfce
+					border-top: 0
+					border-right: 0
+					top: 40px
+					left: -9px
+					background: #fff
+					transform: rotate(45deg)
+					z-index: 2
+				.text
+					position: relative
+					z-index: 5
+					text-align: justify
+				.quote
+					position: absolute
+					font-size: 60px
+					line-height: 1
+					color: #e1e1e1
+					z-index: 2
+					img
+						width: 32px
+					&.quote-left
+						left: 15px
+						top: 0
+					&.quote-right
+						right: 15px
+						bottom: 0
+			.info
+				text-align: right
+				margin-top: 10px
+				color: #5abfce
+	@media (max-width: 576px)
+		.feedback
+			flex-direction: column
+			align-items: center
+			.content-wrapper
+				padding-left: 0
+				padding-top: 20px
+				.text-wrapper
+					&:before
+						top: -4.5px
+						left: 50%
+						transform: rotate(45deg) translateX(-50%)
+						border-top: 2px solid #5abfce
+						border-bottom: 0
+						border-right: 0

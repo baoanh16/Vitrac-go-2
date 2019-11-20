@@ -1,0 +1,110 @@
+.vt-product-list-v2
+	padding: 50px 0
+	background: #f8f8f8
+	@media (min-width: 1025px)
+		padding: 80px 0
+	.row
+		margin-bottom: -20px
+		> *
+			margin-bottom: 20px
+	.product
+		display: flex
+		flex-wrap: wrap
+		height: 100%
+		padding: 10px
+		transition: 0.3s all
+		.img
+			flex: 0 0 50%
+			max-width: 50%
+			position: relative
+			.tag
+				position: absolute
+				top: 0
+				right: 0
+				padding: 2.5px 8px
+				background: #fa0
+				color: #fff
+				text-transform: uppercase
+			a
+				display: block
+				position: relative
+				img
+					width: 100%
+		.info
+			flex: 0 0 50%
+			max-width: 50%
+			padding-left: 15px
+			.name 
+				color: #fa0
+				font-weight: 600
+				text-transform: uppercase
+				font-size: 16px
+				line-height: 1.25
+				display: -webkit-box
+				-webkit-line-clamp: 2
+				-webkit-box-orient: vertical  
+				overflow: hidden
+			.model
+				font-size: 13px
+				color: #999
+				height: 19px
+				display: flex
+			.place
+				font-size: 12px
+				padding-left: 20px
+			table
+				margin-top: 4px
+				font-size: 12px
+				padding-left: 0
+				list-style: none
+				width: 100%
+				tr
+					td
+						line-height: 1.3
+						vertical-align: top
+						&:first-child
+							white-space: nowrap
+							padding-right: 5px
+							width: 50%
+							em
+								margin-right: 2px
+								width: 12px
+								display: inline-block
+								color: #fa0
+					&:last-child
+						td:first-child
+							vertical-align: top
+					&:nth-last-child(2)
+						td:last-child
+							word-break: break-all
+		.view-more
+			a
+				height: 30px
+				width: 120px
+				background: #fa0
+				color: #fff
+				margin: 20px auto 0
+				display: flex
+				align-items: center
+				justify-content: center
+		&:hover
+			box-shadow: 0px 0px 12px -2px rgba(0,0,0,0.3)
+	@media (max-width: 576px)
+		.product
+			.img
+				flex: 0 0 100%
+				max-width: 100%
+				margin-bottom: 15px
+				a
+					img
+						position: static
+			.info
+				padding-left: 0
+				flex: 0 0 100%
+				max-width: 100%
+				table
+					font-size: 13px
+			.view-more
+				a
+					margin: 10px 0 0 0
+				

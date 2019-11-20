@@ -40,7 +40,7 @@
 
 	</xsl:template>
 	<xsl:template match="News" mode="Slide">
-		<xsl:if test="position() >= 1 and position() &lt; 5">
+		<xsl:if test="position() >= 1 and position() &lt; 3">
 			<div class="swiper-slide">
 				<div class="watch-more-page">
 					<a>
@@ -103,7 +103,7 @@
 
 	</xsl:template>
 	<xsl:template match="News" mode="Side">
-		<xsl:if test="position() > 4 and position() &lt; 9">
+		<xsl:if test="position() > 2 and position() &lt; 7">
 			<div class="new-item-side">
 				<div class="news-item-image">
 					<a>
@@ -145,7 +145,7 @@
 		</xsl:if>
 	</xsl:template>
 	<xsl:template match="News" mode="Bottom">
-		<xsl:if test="position() > 8 and position() &lt; 12">
+		<xsl:if test="position() > 6 and position() &lt; 10">
 			<div class="col-md-4 news-item">
 				<div class="news-item-image">
 					<a>

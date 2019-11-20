@@ -1,0 +1,23 @@
+section.feedback-section
+	.container
+		.title 
+			h1 đối tác
+		.row
+			- for(i=0;i<6;i++)
+				.col-lg-6
+					.feedback
+						.img
+							.wrapper
+								img(src="./img/person.jpg", alt="")
+						.content-wrapper
+							.text-wrapper
+								span.quote.quote-left
+									img(src="./img/left-quotes.png", alt="")
+								.text
+									p Lorem ipsum dolor sit amet consectetur adipisicing elit. Error quam reprehenderit, consequuntur maiores sapiente itaque eaque maxime similique distinctio non rem cumque, nesciunt labore et nulla aspernatur numquam quod iste!
+								span.quote.quote-right
+									img(src="./img/right-quotes.png", alt="")
+							.info
+								p.name Ông Nguyễn Văn A
+								p.job Chức vụ: Giám đốc
+								p.unit Đơn vị: ABC
